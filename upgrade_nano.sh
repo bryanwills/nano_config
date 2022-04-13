@@ -15,9 +15,12 @@ echo "Done"
 make
 sudo make install
 
+echo "Creating config files and custom .nanorc files."
 sudo mkdir -p ~/.config/nano
 sudo chown -R $USER:$USER ~/.config/nano
-cp -r ./custom ~/.config/nano/custom
+cp nanorc ~/.config/nano/nanorc
+cp -r custom/ ~/.config/nano/custom
+echo "Done"
 
 
 
