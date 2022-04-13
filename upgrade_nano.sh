@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd ~
-sudo apt install wget make g++ gcc build-essential -y
+sudo apt install wget make g++ gcc build-essential libncurses-dev -y
 echo "Installing wget make g++ gcc build-essential..."
 echo "Downloading nanov6..."
 wget https://www.nano-editor.org/dist/v6/nano-6.0.tar.gz
@@ -14,5 +14,10 @@ echo "Creating make file"
 echo "Done"
 make
 sudo make install
+
+sudo mkdir -p ~/.config/nano
+sudo chown -R $USER:$USER ~/.config/nano
+cp -r ./custom ~/.config/nano/custom
+
 
 
